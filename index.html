@@ -1,12 +1,91 @@
+
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>prasadcashew.com</title>
-  </head>
-  <body>
-    <h1>Welcome to prasadcashew.com</h1>
-    <p>This site is hosted via GitHub Pages.</p>
+    <title>ALLNUTTS | Global Agri-Commodity Specialists</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">ALLNUTTS</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="reports.html">Market Reports</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Smart Sourcing of Cashews, Coffee, Pepper & Peanuts</h1>
+        <p>Direct sourcing from India, Vietnam, Africa, Uganda & China. Reliable execution. Verified quality.</p>
+        <a href="#quote" class="btn btn-primary">Request a Quote</a>
+        <a href="reports.html" class="btn btn-outline">Market Reports</a>
+    </header>
+
+    <section class="section">
+        <div class="section-title">
+            <h2>Our Core Commodities</h2>
+            <p>Sourced directly from vetted processors across key origins</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Cashew Kernels</h3>
+                <p>India, Vietnam, Africa. <br><strong>Grades:</strong> W180, W240, W320, Splits, Pieces.</p>
+            </div>
+            <div class="card">
+                <h3>Robusta Coffee</h3>
+                <p>Vietnam, Uganda. <br><strong>Grades:</strong> Screen 18, 16, Polished Uganda.</p>
+            </div>
+            <div class="card">
+                <h3>Black Pepper</h3>
+                <p>Vietnam, Brazil. <br><strong>Grades:</strong> FAQ 500, 550, ASTA 570, Big Berry.</p>
+            </div>
+            <div class="card">
+                <h3>Peanuts</h3>
+                <p>China, India. <br><strong>Types:</strong> In-Shell, Shelled, Blanched, Roasted.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote" class="section" style="background: #eee;">
+        <div class="section-title">
+            <h2>Get a Direct Market Quote</h2>
+            <p>Share your specification for targeted offers</p>
+        </div>
+        <div class="quote-container">
+            <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" id="company" placeholder="Your Company">
+            </div>
+            <div class="form-group">
+                <label>Product</label>
+                <select id="product">
+                    <option>Cashew Kernels</option>
+                    <option>Robusta Coffee</option>
+                    <option>Black Pepper</option>
+                    <option>Peanuts</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Quantity & Shipment (e.g. 2x20 FCL)</label>
+                <input type="text" id="qty" placeholder="Specify quantity">
+            </div>
+            <div class="form-group">
+                <label>Details (Grade, Port, Packing)</label>
+                <textarea id="details" rows="4"></textarea>
+            </div>
+            <button class="btn btn-primary" style="width:100%" onclick="sendWhatsApp()">Send Quote Request via WhatsApp</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="reports.html">Reports</a>
+        </div>
+        <p>&copy; 2026 ALLNUTTS. Precision in every shipment.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
