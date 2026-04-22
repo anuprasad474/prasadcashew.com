@@ -1,47 +1,151 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Offices | ALLNUTTS</title>
+    <title>Our Strategic Hubs | ALLNUTTS Institutional Sourcing</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: var(--cream);">
+
+    <!-- NAVIGATION -->
     <nav>
-        <div class="logo-container"><a href="index.html"><img src="logo.png" alt="ALLNUTTS"></a></div>
+        <div class="logo-container">
+            <a href="index.html"><img src="logo.png" alt="ALLNUTTS Logo"></a>
+        </div>
         <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Our Story</a>
+            <a href="reports.html">Insights</a>
+            <a href="contact.html" style="color: var(--gold);">Offices</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="height: 50vh; background: linear-gradient(rgba(6, 78, 59, 0.9), rgba(10, 31, 24, 0.95)), url('https://images.unsplash.com/photo-1497366754035-658b4392779//q=80&w=1920');">
+        <div class="hero-content">
+            <h1 style="font-size: 3rem;">Global Presence. <span style="color: var(--gold);">Local Intelligence.</span></h1>
+            <p>Connect with our trading desks across the primary sourcing hubs of Asia.</p>
+        </div>
+    </section>
+
+    <!-- STRATEGIC HUBS GRID -->
+    <section class="section-padding">
+        <div class="section-header reveal">
+            <h2>Our Strategic Hubs</h2>
+            <p>Direct access to our operatives on the ground in the world's key commodity centers.</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- CHENNAI HUB -->
+            <div class="product-card reveal">
+                <div class="origin-chip">Corporate HQ</div>
+                <h3>Chennai, India</h3>
+                <p style="margin-bottom: 20px; color: var(--text-muted);">Our central trading desk for India and African sourcing coordination.</p>
+                <div class="spec-table">
+                    <tr><th>Role</th><td>Trading & Logistics</td></tr>
+                    <tr><th>Focus</th><td>Sourcing & Export Ops</td></tr>
+                    <tr><th>Contact</th><td>Trading Desk - Chennai</td></tr>
+                </div>
+            </div>
+
+            <!-- KOLLAM HUB -->
+            <div class="product-card reveal">
+                <div class="origin-chip">Processing Hub</div>
+                <h3>Kollam, India</h3>
+                <p style="margin-bottom: 20px; color: var(--text-muted);">The heart of cashew processing. Real-time quality verification and lot sampling.</p>
+                <div class="spec-table">
+                    <tr><th>Role</th><td>Quality Control</td></tr>
+                    <tr><th>Focus</th><td>Cashew Grading/Sampling</td></tr>
+                    <tr><th>Contact</th><td>Kollam Ops Desk</td></tr>
+                </div>
+            </div>
+
+            <!-- VIETNAM HUB -->
+            <div class="product-card reveal">
+                <div class="origin-chip">Sourcing Hub</div>
+                <h3>Đồng Nai, Vietnam</h3>
+                <p style="margin-bottom: 20px; color: var(--text-muted);">Our primary gateway for Robusta Coffee and premium Vietnamese Cashews.</p>
+                <div class="spec-table">
+                    <tr><th>Role</th><td>Origin Intelligence</td></tr>
+                    <tr><th>Focus</th><td>Coffee & Cashew Sourcing</td></tr>
+                    <tr><th>Contact</th><td>Vietnam Agency Desk</td></tr>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND ECOSYSTEM -->
+    <section class="section-padding" style="background-color: var(--white);">
+        <div class="section-header reveal">
+            <h2>Our Brand Ecosystem</h2>
+            <p>We operate multiple specialized brands to serve different market segments with precision.</p>
+        </div>
+        
+        <div class="pillars">
+            <div class="pillar-item reveal" style="text-align: center;">
+                <h3 style="font-size: 1.2rem;">allnutts.com</h3>
+                <p>Global Institutional Sourcing</p>
+            </div>
+<div class="pillar-item reveal" style="text-align: center;">
+                <h3 style="font-size: 1.2rem;">prasadcashew.com</h3>
+                <p>Premium Cashew Specialization</p>
+            </div>
+            <div class="pillar-item reveal" style="text-align: center;">
+                <h3 style="font-size: 1.2rem;">essarindustries.in</h3>
+                <p>Industrial Agri-Commodities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTITUTIONAL INQUIRY FORM -->
+    <section class="quote-section">
+        <div class="quote-container reveal">
+            <div class="section-header">
+                <h2 style="color: var(--gold);">Direct Trading Inquiry</h2>
+                <p style="color: white; opacity: 0.8;">Submit your technical specifications for a targeted institutional offer.</p>
+            </div>
+
+            <form class="quote-grid">
+                <div class="input-group">
+                    <label>Company Name</label>
+                    <input type="text" placeholder="e.g. Global Trade Ltd.">
+                </div>
+                <div class="input-group">
+                    <label>Commodity</label>
+                    <select>
+                        <option>Cashew Kernels</option>
+                        <option>Robusta Coffee</option>
+                        <option>Black Pepper</option>
+                        <option>Peanuts</option>
+                    </select>
+                </div>
+                <div class="input-group full">
+                    <label>Company Email / WhatsApp</label>
+                    <input type="text" placeholder="Enter your contact details">
+                </div>
+                <div class="input-group full">
+                    <label>Technical Specifications (Grade, Volume, Destination Port)</label>
+                    <textarea rows="4" placeholder="Example: W320, 10 FCL, CIF Hamburg, 25kg Vacuum Packs..."></textarea>
+                </div>
+                <div class="full" style="text-align: center; margin-top: 20px;">
+                    <button type="submit" class="btn-gold" style="border: none; cursor: pointer; width: 100%; max-width: 400px;">Submit to Trading Desk</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="about.html">Our Story</a>
             <a href="reports.html">Insights</a>
             <a href="contact.html">Offices</a>
         </div>
-    </nav>
-    <section class="section-padding">
-        <div class="section-header reveal">
-            <h2>Global Logistics Hubs</h2>
-            <p>Our regional offices ensure seamless execution across the primary origin hubs.</p>
-        </div>
-        <div class="bento-grid">
-            <div class="product-card reveal">
-                <h3 class="serif">Chennai, India</h3>
-                <p><strong>Headquarters</strong><br>Strategic Finance, Global Contracts & Legal</p>
-            </div>
-            <div class="product-card reveal">
-                <h3 class="serif">Kollam, India</h3>
-                <p><strong>Quality Hub</strong><br>Processing Oversight & Sampling Labs</p>
-            </div>
-            <div class="product-card reveal">
-                <h3 class="serif">Đồng Nai, Vietnam</h3>
-                <p><strong>Origin Office</strong><br>🇻🇳 Sourcing & Export Logistics</p>
-            </div>
-        </div>
-        <div style="text-align:center; margin-top:80px;" class="reveal">
-            <h3 class="serif" style="font-size: 2rem; color: var(--emerald);">Direct Communication</h3>
-            <p style="font-size: 1.2rem;">Trade Desk: <a href="mailto:nikitha@allnutts.com" style="color:var(--gold); text-decoration:none; font-weight:700;">nikitha@allnutts.com</a></p>
-            <p style="font-size: 1.2rem;">WhatsApp: <a href="https://wa.me/919447745497" style="color:var(--gold); text-decoration:none; font-weight:700;">+91 94477 45497</a></p>
-        </div>
-    </section>
-    <footer><p>&copy; 2026 ALLNUTTS</p></footer>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">© 2026 ALLNUTTS | Institutional Agri-Commodity Sourcing</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
