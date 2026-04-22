@@ -1,37 +1,143 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market Insights | ALLNUTTS</title>
+    <title>Market Insights | ALLNUTTS Institutional Sourcing</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: var(--cream);">
+
+    <!-- NAVIGATION -->
     <nav>
-        <div class="logo-container"><a href="index.html"><img src="logo.png" alt="ALLNUTTS"></a></div>
+        <div class="logo-container">
+            <a href="index.html"><img src="logo.png" alt="ALLNUTTS Logo"></a>
+        </div>
         <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">Our Story</a>
+            <a href="reports.html" style="color: var(--gold);">Insights</a>
+            <a href="contact.html">Offices</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="height: 50vh; background: linear-gradient(rgba(6, 78, 59, 0.9), rgba(10, 31, 24, 0.95)), url('https://images.unsplash.com/photo-1460925895917-afbe65 PSU-60?q=80&w=1920');">
+        <div class="hero-content">
+            <h1 style="font-size: 3rem;">Market <span style="color: var(--gold);">Intelligence</span></h1>
+            <p>Precision data for a volatile market. We provide strategic price-trend analysis for institutional buyers.</p>
+        </div>
+    </section>
+
+    <!-- EXCLUSIVE ACCESS SECTION -->
+    <section class="section-padding">
+        <div class="section-header reveal">
+            <h2>Institutional Reports</h2>
+            <p>Market updates are provided exclusively to our regular clients. Verified new partners may request a specific commodity report via our intelligence desk.</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- CASHEW REPORT CARD -->
+            <div class="product-card reveal">
+                <div class="origin-chip">Live Update</div>
+                <h3>Cashew Kernels</h3>
+                <p>Analysis covering Vietnam & West Africa origin trends, W-grade pricing, and shipping capacity.</p>
+                <button onclick="prepareRequest('Cashew Kernels')" class="btn-gold" style="width: 100%; border: none; cursor: pointer; margin-top: 20px;">Request Current Report</button>
+            </div>
+
+            <!-- COFFEE REPORT CARD -->
+            <div class="product-card reveal">
+                <div class="origin-chip">Live Update</div>
+                <h3>Robusta Coffee</h3>
+                <p>Strategic insights on Robusta price volatility, screen size availability, and Vietnam harvest cycles.</p>
+                <button onclick="prepareRequest('Robusta Coffee')" class="btn-gold" style="width: 100%; border: none; cursor: pointer; margin-top: 20px;">Request Current Report</button>
+            </div>
+
+            <!-- PEPPER REPORT CARD -->
+            <div class="product-card reveal">
+                <div class="origin-chip">Live Update</div>
+                <h3>Black Pepper</h3>
+                <p>Intelligence on ASTA/FAQ standards, density-price correlations, and global demand shifts.</p>
+                <button onclick="prepareRequest('Black Pepper')" class="btn-gold" style="width: 100%; border: none; cursor: pointer; margin-top: 20px;">Request Current Report</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE WHATSAPP INTELLIGENCE DESK -->
+    <section class="quote-section" id="request-hub" style="display: none;">
+        <div class="quote-container reveal">
+            <div class="section-header">
+                <h2 style="color: var(--gold);">Intelligence Request Desk</h2>
+                <p style="color: white; opacity: 0.8;">Please provide your credentials. Our trading desk will verify your company and share the report via WhatsApp.</p>
+            </div>
+
+            <form class="quote-grid" id="reportForm">
+                <div class="input-group full">
+                    <label>Requested Commodity</label>
+                    <input type="text" id="selectedProduct" readonly style="background: rgba(212, 175, 55, 0.2); border-color: var(--gold);">
+                </div>
+                <div class="input-group">
+<label>Company Name</label>
+                    <input type="text" id="compName" placeholder="Enter Legal Entity Name" required>
+                </div>
+                <div class="input-group">
+                    <label>Country</label>
+                    <input type="text" id="country" placeholder="Your Business Location" required>
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="Official Company Email" required>
+                </div>
+                <div class="input-group">
+                    <label>Mobile/WhatsApp Number</label>
+                    <input type="text" id="phone" placeholder="+ Country Code ..." required>
+                </div>
+                <div class="full" style="text-align: center; margin-top: 20px;">
+                    <button type="button" onclick="sendWhatsAppRequest()" class="btn-gold" style="border: none; cursor: pointer; width: 100%; max-width: 400px;">WhatsApp Intelligence Desk ➔</button>
+                    <p style="font-size: 0.7rem; margin-top: 15px; opacity: 0.6; color: white;">You will be redirected to WhatsApp to complete your request.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="about.html">Our Story</a>
             <a href="reports.html">Insights</a>
             <a href="contact.html">Offices</a>
         </div>
-    </nav>
-    <section class="section-padding">
-        <div class="section-header reveal">
-            <h2>Institutional Intelligence</h2>
-            <p>Real-time analysis of crop yields and pricing volatility.</p>
-        </div>
-        
-        <div style="max-width: 800px; margin: 0 auto;" class="reveal">
-            <div class="product-card" style="margin-bottom: 30px;">
-                <h3 class="serif">Market Pulse: Q2 2026</h3>
-                <p><strong>Vietnam Robusta:</strong> seeing 5% volatility due to unexpected rain in the Central Highlands. We recommend locking in volumes for June shipments.</p>
-                <p><strong>Cashew W320:</strong> Ivory Coast supply is tightening. India's export parity remains competitive.</p>
-                <a href="#" class="btn-gold" style="font-size: 0.7rem; padding: 10px 20px;">Download Full PDF Report</a>
-            </div>
-        </div>
-    </section>
-    <footer><p>&copy; 2026 ALLNUTTS</p></footer>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">© 2026 ALLNUTTS | Institutional Agri-Commodity Sourcing</p>
+    </footer>
+
+    <script>
+        function prepareRequest(product) {
+            document.getElementById('selectedProduct').value = product;
+            document.getElementById('request-hub').style.display = 'block';
+            window.scrollTo({ top: document.getElementById('request-hub').offsetTop, behavior: 'smooth' });
+        }
+
+        function sendWhatsAppRequest() {
+            const product = document.getElementById('selectedProduct').value;
+            const comp = document.getElementById('compName').value;
+            const country = document.getElementById('country').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            if(!comp || !country || !email || !phone) {
+                alert("Please fill in all professional details to request the report.");
+                return;
+            }
+
+            // Professional WhatsApp Message Format
+            const message = `Hi Allnutts Trading Desk,%0A%0AI would like to request the recent Market Report for: *${product}*%0A%0A*My Details:*%0A- Company: ${comp}%0A- Country: ${country}%0A- Email: ${email}%0A- Mobile: ${phone}%0A%0APlease share the latest insights. Thank you.`;
+            
+            // REPLACE 'YOUR_PHONE_NUMBER' with your actual WhatsApp number (e.g. 919840000000)
+            const whatsappUrl = `https://wa.me/YOUR_PHONE_NUMBER?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
