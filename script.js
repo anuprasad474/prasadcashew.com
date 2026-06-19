@@ -1,4 +1,4 @@
-/* ALLNUTTS — interaction + i18n controller */
+/* ALLNUTTS — interaction + i18n controller (v2) */
 (function () {
   'use strict';
   var LS = 'allnutts_lang';
@@ -44,6 +44,11 @@
       var key = el.getAttribute('data-i18n-opt');
       if (d[key] != null) el.textContent = d[key];
     });
+    // aria-labels (e.g. social icons)
+    $all('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (d[key] != null) el.setAttribute('aria-label', d[key]);
+    });
 
     // switcher button
     var lbl = $('#langLabel'), flag = $('#langFlag');
@@ -80,19 +85,56 @@
     document.addEventListener('click', function () { lang.classList.remove('open'); });
   }
 
-  /* ---------- mobile nav ---------- */
+  /* ---------- mobile nav (drawer + scrim + scroll lock) ---------- */
   function initNav() {
-    var t = $('#navToggle'), links = $('#navLinks');
-    if (t && links) t.addEventListener('click', function () { links.classList.toggle('open'); });
+    var toggle = $('#navToggle');
+    var links = $('#navLinks');
+    var scrim = $('#navScrim');
     var nav = $('nav');
-    window.addEventListener('scroll', function () {
-      if (!nav) return;
-      nav.style.padding = window.scrollY > 30 ? '0' : '';
-    }, { passive: true });
+
+    function openMenu() {
+      links.classList.add('open');
+      toggle.classList.add('open');
+      if (scrim) scrim.classList.add('show');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('nav-open');
+    }
+    function closeMenu() {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      if (scrim) scrim.classList.remove('show');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
+    function toggleMenu() {
+      if (links.classList.contains('open')) closeMenu(); else openMenu();
+    }
+
+    if (toggle && links) {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.addEventListener('click', toggleMenu);
+      // close after tapping any link inside the drawer
+      $all('a', links).forEach(function (a) {
+        a.addEventListener('click', closeMenu);
+      });
+    }
+    if (scrim) scrim.addEventListener('click', closeMenu);
+    // close on Escape and when resizing back to desktop
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 920) closeMenu(); });
+
+    // condensed nav on scroll
+    if (nav) {
+      var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 30); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
     // mark active page
     var path = (location.pathname.split('/').pop() || 'index.html');
     $all('.nav-links a').forEach(function (a) {
-      if (a.getAttribute('href') === path) a.classList.add('active');
+      var href = a.getAttribute('href') || '';
+      if (href === path || (path === 'index.html' && href === 'index.html')) a.classList.add('active');
     });
   }
 
@@ -133,11 +175,7 @@
     var product = (($('#product') || {}).value || '-');
     var qty = (($('#qty') || {}).value || '-');
     var details = (($('#details') || {}).value || '-');
-    var L = {
-      title: '*ALLNUTTS — Quote Request*',
-      company: d.f_company, product: d.f_product, qty: 'Volume', details: 'Specs'
-    };
-    var msg = L.title + '\n\n' +
+    var msg = '*ALLNUTTS — Quote Request*\n\n' +
       '*' + d.f_company + ':* ' + company + '\n' +
       '*' + d.f_product + ':* ' + product + '\n' +
       '*Volume:* ' + qty + '\n' +
