@@ -1,89 +1,161 @@
-/**
- * ALLNUTTS Institutional Sourcing - Master Logic v4.2
- * Handles: Scroll Animations, Report Requests, and Trading Inquiries
- * TARGET: Prasad - 00919447745497
- */
+/* ALLNUTTS — interaction + i18n controller */
+(function () {
+  'use strict';
+  var LS = 'allnutts_lang';
+  var WA = '919447745497';
+  var I18N = window.I18N, FLAGS = window.LANG_FLAGS;
 
-// 1. CONFIGURATION - YOUR VERIFIED WHATSAPP NUMBER
-const TRADING_DESK_PHONE = "919447745497"; 
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $all(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
 
-document.addEventListener('DOMContentLoaded', () => {
-    initAnimations();
-    initContactForm();
-});
+  /* ---------- language ---------- */
+  function detectLang() {
+    var saved = localStorage.getItem(LS);
+    if (saved && I18N[saved]) return saved;
+    var n = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    return I18N[n] ? n : 'en';
+  }
+  var current = detectLang();
 
-// 2. SMOOTH SCROLL REVEAL LOGIC
-function initAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
+  function applyLang(code) {
+    if (!I18N[code]) code = 'en';
+    current = code;
+    localStorage.setItem(LS, code);
+    var d = I18N[code];
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, observerOptions);
+    document.documentElement.lang = code;
+    document.documentElement.dir = d.dir;
+    document.body.setAttribute('dir', d.dir);
+    document.body.className = document.body.className.replace(/\blang-\w+\b/g, '').trim();
+    document.body.classList.add('lang-' + code);
 
-    document.querySelectorAll('.reveal').forEach(el => {
-        observer.observe(el);
+    // text nodes
+    $all('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (d[key] != null) el.innerHTML = d[key];
     });
-}
+    // placeholders
+    $all('[data-i18n-ph]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-ph');
+      if (d[key] != null) el.setAttribute('placeholder', d[key]);
+    });
+    // option labels
+    $all('[data-i18n-opt]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-opt');
+      if (d[key] != null) el.textContent = d[key];
+    });
 
-// 3. CONTACT PAGE: DIRECT TRADING INQUIRY
-function initContactForm() {
-    const contactBtn = document.querySelector('button[type="submit"]');
-    if (contactBtn) {
-        contactBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Gather form data using their current placeholders
-            const company = document.querySelector('input[placeholder="e.g. Global Trade Ltd."]')?.value;
-            const commodity = document.querySelector('select')?.value;
-            const contact = document.querySelector('input[placeholder="Enter your contact details"]')?.value;
-            const specs = document.querySelector('textarea')?.value;
+    // switcher button
+    var lbl = $('#langLabel'), flag = $('#langFlag');
+    if (lbl) lbl.textContent = d.native;
+    if (flag) flag.style.background = FLAGS[code];
+    $all('.lang-option').forEach(function (o) {
+      o.classList.toggle('active', o.getAttribute('data-lang') === code);
+    });
+  }
 
-            if (!company || !contact) {
-                alert("Please enter your company name and contact details.");
-                return;
-            }
+  function buildLangMenu() {
+    var menu = $('#langMenu');
+    if (!menu) return;
+    menu.innerHTML = Object.keys(I18N).map(function (k) {
+      var d = I18N[k];
+      return '<button class="lang-option" data-lang="' + k + '" role="menuitem">' +
+        '<span class="lang-flag" style="background:' + FLAGS[k] + '"></span>' +
+        '<span>' + d.native + '</span><span class="lang-native">' + d.label + '</span></button>';
+    }).join('');
+    menu.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-lang]');
+      if (!b) return;
+      applyLang(b.getAttribute('data-lang'));
+      $('#lang').classList.remove('open');
+    });
+  }
 
-            const message = `Hi Allnutts Trading Desk,%0A%0A*Institutional Inquiry*%0A- Company: ${company}%0A- Commodity: ${commodity}%0A- Contact: ${contact}%0A- Specs: ${specs || 'Not provided'}%0A%0APlease let us know the current availability.`;
-            
-            window.open(`https://wa.me/${TRADING_DESK_PHONE}?text=${message}`, '_blank');
-        });
-    }
-}
+  function initLangToggle() {
+    var lang = $('#lang'); if (!lang) return;
+    $('#langBtn').addEventListener('click', function (e) {
+      e.stopPropagation();
+      lang.classList.toggle('open');
+    });
+    document.addEventListener('click', function () { lang.classList.remove('open'); });
+  }
 
-// 4. REPORTS PAGE: INTELLIGENCE REQUEST ENGINE
-// This function is called by the 'onclick' attribute in reports.html
-window.prepareRequest = function(product) {
-    const hub = document.getElementById('request-hub');
-    const productInput = document.getElementById('selectedProduct');
-    
-    if (hub && productInput) {
-        productInput.value = product;
-        hub.style.display = 'block';
-        hub.scrollIntoView({ behavior: 'smooth' });
-    }
-};
+  /* ---------- mobile nav ---------- */
+  function initNav() {
+    var t = $('#navToggle'), links = $('#navLinks');
+    if (t && links) t.addEventListener('click', function () { links.classList.toggle('open'); });
+    var nav = $('nav');
+    window.addEventListener('scroll', function () {
+      if (!nav) return;
+      nav.style.padding = window.scrollY > 30 ? '0' : '';
+    }, { passive: true });
+    // mark active page
+    var path = (location.pathname.split('/').pop() || 'index.html');
+    $all('.nav-links a').forEach(function (a) {
+      if (a.getAttribute('href') === path) a.classList.add('active');
+    });
+  }
 
-// This function is called by the 'onclick' attribute in reports.html
-window.sendWhatsAppRequest = function() {
-    const product = document.getElementById('selectedProduct')?.value;
-    const comp = document.getElementById('compName')?.value;
-    const country = document.getElementById('country')?.value;
-    const email = document.getElementById('email')?.value;
-    const phone = document.getElementById('phone')?.value;
+  /* ---------- reveal (fail-safe: content never stays hidden) ---------- */
+  function initReveal() {
+    var els = $all('.reveal');
+    function showAll() { els.forEach(function (e) { e.classList.add('in'); }); }
+    if (!('IntersectionObserver' in window)) { showAll(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (e, i) { e.style.transitionDelay = (i % 4) * 90 + 'ms'; io.observe(e); });
+    // Safety net: if anything is still hidden after 1.6s, reveal it.
+    setTimeout(function () {
+      els.forEach(function (e) {
+        var r = e.getBoundingClientRect();
+        if (r.top < window.innerHeight + 200) e.classList.add('in');
+      });
+    }, 1600);
+    // Absolute fallback on full load.
+    window.addEventListener('load', function () { setTimeout(showAll, 2500); });
+  }
 
-    if (!comp || !country || !email || !phone) {
-        alert("Please fill in all professional details to verify your company.");
-        return;
-    }
+  /* ---------- WhatsApp ---------- */
+  function toast(msg) {
+    var t = $('#toast'); if (!t) return;
+    t.querySelector('span').textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { t.classList.remove('show'); }, 2600);
+  }
 
-    const message = `Hi Allnutts Trading Desk,%0A%0AI would like to request the recent Market Report for: *${product}*%0A%0A*My Details:*%0A- Company: ${comp}%0A- Country: ${country}%0A- Email: ${email}%0A- Mobile: ${phone}%0A%0APlease share the latest insights. Thank you.`;
-    
-    window.open(`https://wa.me/${TRADING_DESK_PHONE}?text=${message}`, '_blank');
-};
+  window.sendWhatsApp = function () {
+    var d = I18N[current];
+    var company = (($('#company') || {}).value || '-');
+    var product = (($('#product') || {}).value || '-');
+    var qty = (($('#qty') || {}).value || '-');
+    var details = (($('#details') || {}).value || '-');
+    var L = {
+      title: '*ALLNUTTS — Quote Request*',
+      company: d.f_company, product: d.f_product, qty: 'Volume', details: 'Specs'
+    };
+    var msg = L.title + '\n\n' +
+      '*' + d.f_company + ':* ' + company + '\n' +
+      '*' + d.f_product + ':* ' + product + '\n' +
+      '*Volume:* ' + qty + '\n' +
+      '*Spec:* ' + details;
+    toast(d.toast_msg);
+    setTimeout(function () {
+      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
+    }, 450);
+  };
+
+  /* ---------- boot ---------- */
+  function boot() {
+    buildLangMenu();
+    initLangToggle();
+    initNav();
+    initReveal();
+    applyLang(current);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();

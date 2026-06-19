@@ -1,145 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Story | ALLNUTTS Institutional Sourcing</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story | ALLNUTTS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png" />
 </head>
 <body>
-
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo-container">
-            <a href="index.html"><img src="logo.png" alt="ALLNUTTS Logo"></a>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span data-i18n="top_tag">Institutional Agri-Commodity Sourcing</span>
+      <div class="topbar-tags">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span data-i18n="top_verified">SGS / Intertek Verified</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="top_offices">Origin Offices · India · Vietnam</span></span>
+        <a href="https://wa.me/919447745497" target="_blank" rel="noopener">+91 94477 45497</a>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-container">
+      <div class="logo-container"><a href="index.html"><img src="logo.png" alt="ALLNUTTS" /></a></div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="about.html" data-i18n="nav_about">Our Story</a>
+        <a href="reports.html" data-i18n="nav_reports">Market Insights</a>
+        <a href="contact.html" data-i18n="nav_contact">Global Offices</a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang" id="lang">
+          <button class="lang-btn" id="langBtn" aria-label="Select language">
+            <span class="lang-flag" id="langFlag"></span><span id="langLabel">EN</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu"></div>
         </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html" style="color: var(--gold);">Our Story</a>
-            <a href="reports.html">Insights</a>
-            <a href="contact.html">Offices</a>
-        </div>
-    </nav>
+        <a href="index.html#quote" class="btn-quote-sm" data-i18n="nav_quote">Get Quote</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero" style="height: 60vh; background: linear-gradient(rgba(6, 78, 59, 0.9), rgba(10, 31, 24, 0.95)), url('https://images.unsplash.com/photo-1488459716789-02a68a239060?q=80&w=1920');">
-        <div class="hero-content">
-            <h1>30 Years of <span style="color: var(--gold);">Sourcing Excellence</span></h1>
-            <p>From a family-driven operation to a global brokerage powerhouse. We don't just move cargo; we manage risk for the world's most demanding buyers.</p>
-        </div>
-    </section>
+  <!-- page header band -->
+  <section class="cta-band" style="padding:5rem 6% 4rem;">
+    <span class="eyebrow center" style="justify-content:center; margin-bottom:1rem;" data-i18n="about_eyebrow">Our Philosophy</span>
+    <h2 data-i18n="about_h2">The Allnutts Philosophy</h2>
+    <p data-i18n="about_p">Defining the bridge between origin farms and global industry.</p>
+  </section>
 
-    <!-- THE PTC LEGACY -->
-    <section class="section-padding">
-        <div class="section-header reveal">
-            <h2>The PTC Legacy</h2>
-            <p>Founded on the principles of absolute transparency and technical precision, Allnutts (and the precursor PTC operations) has spent three decades building a network of trusted processors across Asia and Africa.</p>
+  <section class="section-spacing">
+    <div class="container">
+      <div class="editorial">
+        <div class="editorial-block reveal">
+          <div class="editorial-num">01</div>
+          <div><h3 data-i18n="about1_t">Broker, Not Factory</h3><p data-i18n="about1_p"></p></div>
         </div>
-
-        <div class="bento-grid">
-            <div class="product-card reveal">
-                <div class="origin-chip">Our Philosophy</div>
-                <h3>Precision</h3>
-                <p>We match grades to the exact micron, ensuring a seamless fit for industrial processing and retail packaging.</p>
-            </div>
-            <div class="product-card reveal">
-                <div class="origin-chip">Our Ethics</div>
-                <h3>Integrity</h3>
-                <p>A "Broker's Honor" code. We prioritize the buyer's interest over the supplier's volume, ensuring you get the best lot available.</p>
-            </div>
-            <div class="product-card reveal">
-                <div class="origin-chip">Our Standard</div>
-                <h3>Verification</h3>
-                <p>Zero ambiguity. Mandatory 3rd party inspection via SGS/Intertek before vessel loading. We verify, then we ship.</p>
-            </div>
+        <div class="editorial-block reveal">
+          <div class="editorial-num">02</div>
+          <div><h3 data-i18n="about2_t">The Quality Shield Protocol</h3><p data-i18n="about2_p"></p></div>
         </div>
-    </section>
-
-    <!-- PRODUCT PORTFOLIO TABLE -->
-    <section class="section-padding" style="background-color: var(--white);">
-        <div class="section-header reveal">
-            <h2>Technical Portfolio</h2>
-            <p>Our core sourcing competencies across the primary agri-commodity sectors.</p>
+        <div class="editorial-block reveal">
+          <div class="editorial-num">03</div>
+          <div><h3 data-i18n="about3_t">Strategic Origin Advantage</h3><p data-i18n="about3_p"></p></div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="product-card reveal" style="max-width: 1000px; margin: 0 auto;">
-            <table class="spec-table">
-                <thead>
-<tr>
-                        <th>Commodity</th>
-                        <th>Core Grades</th>
-                        <th>Primary Origins</th>
-                        <th>Sourcing Standard</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Cashew Kernels</strong></td>
-                        <td>W180, W240, W320, LWP</td>
-                        <td>Vietnam, India, Africa</td>
-                        <td>KDFI / AFI Standards</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Robusta Coffee</strong></td>
-                        <td>Grade 1, Grade 2, Polished</td>
-                        <td>Vietnam, Brazil</td>
-                        <td>S18/S16 Screen Size</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Black Pepper</strong> l</td>
-                        <td>ASTA 570, FAQ 550</td>
-                        <td>Vietnam, Brazil</td>
-                        <td>ASTA/FAQ Density</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Peanuts</strong></td>
-                        <td>Bold, Java, Blanched</td>
-                        <td>India, USA</td>
-                        <td>Aflatoxin Tested</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+  <section class="cta-band">
+    <h2><span data-i18n="cta_h2a">Ready to </span><span class="gold" data-i18n="cta_h2_gold">execute</span><span data-i18n="cta_h2b"> your specification?</span></h2>
+    <p data-i18n="cta_p">Connect with our trading desk for a targeted offer based on current crop and pricing.</p>
+    <a href="index.html#quote" class="btn-gold" data-i18n="cta_btn">Request Institutional Quote</a>
+  </section>
 
-    <!-- THE 4 PROMISE PILLARS -->
-    <section class="section-padding">
-        <div class="section-header reveal">
-            <h2>The Allnutts Promise</h2>
-            <p>Why global buyers trust us as their primary sourcing arm.</p>
-        </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="logo.png" alt="ALLNUTTS" /><p data-i18n="foot_about"></p></div>
+      <div class="footer-col"><h5 data-i18n="foot_products">Portfolio</h5>
+        <a href="index.html#portfolio" data-i18n="prod_cashew"></a>
+        <a href="index.html#portfolio" data-i18n="prod_coffee"></a>
+        <a href="index.html#portfolio" data-i18n="prod_pepper"></a>
+      </div>
+      <div class="footer-col"><h5 data-i18n="foot_company">Company</h5>
+        <a href="about.html" data-i18n="nav_about"></a>
+        <a href="reports.html" data-i18n="nav_reports"></a>
+        <a href="contact.html" data-i18n="nav_contact"></a>
+      </div>
+      <div class="footer-col"><h5 data-i18n="foot_connect">Connect</h5>
+        <a href="mailto:trade@allnutts.com">trade@allnutts.com</a>
+        <a href="https://wa.me/919447745497" target="_blank" rel="noopener">WhatsApp · +91 94477 45497</a>
+        <a href="https://www.linkedin.com/company/107169851/" target="_blank" rel="noopener">LinkedIn · ALLNUTTS</a>
+        <a href="https://www.linkedin.com/in/a-prasad-a902522a/" target="_blank" rel="noopener">LinkedIn · A. Prasad</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="foot_rights">© 2026 ALLNUTTS</span>
+      <div class="footer-nav">
+        <a href="index.html" data-i18n="nav_home"></a>
+        <a href="about.html" data-i18n="nav_about"></a>
+        <a href="reports.html" data-i18n="nav_reports"></a>
+        <a href="contact.html" data-i18n="nav_contact"></a>
+      </div>
+    </div>
+  </footer>
 
-        <div class="pillars">
-            <div class="pillar-item reveal">
-                <h3>Zero-Risk Sourcing</h3>
-                <p>We act as your eyes on the ground. No cargo is released without matching your exact technical sample.</p>
-            </div>
-            <div class="pillar-item reveal">
-                <h3>Market Intelligence</h3>
-                <p>Real-time data from operatives in Chennai and Đồng Nai. We anticipate price swings before they happen.</p>
-            </div>
-            <div class="pillar-item reveal">
-                <h3>Logistics Precision</h3>
-                <p>End-to-end documentation. From Bill of Lading to Phytosanitary certificates, we ensure zero port delays.</p>
-            </div>
-            <div class="pillar-item reveal">
-                <h3>Scalable Volume</h3>
-                <p>Whether it is a single trial container or 50 FCLs per month, our network scales to your requirement.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">Our Story</a>
-            <a href="reports.html">Insights</a>
-            <a href="contact.html">Offices</a>
-        </div>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">© 2026 ALLNUTTS | Institutional Agri-Commodity Sourcing</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <a class="wa-fab" href="https://wa.me/919447745497" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2.1-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2 1.7.7 2.3.8 3.2.6.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.3A10 10 0 1 0 12 2z"/></svg>
+  </a>
+  <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg><span>Opening WhatsApp…</span></div>
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
