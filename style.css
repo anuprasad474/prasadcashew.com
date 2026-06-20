@@ -406,75 +406,107 @@ body[dir="rtl"] .hero-bg::after { background:
 
 /* =================== COMPLIANCE SHIELD STRIP =================== */
 .compliance-strip {
-  background: var(--emerald-900);
-  border-top: 1px solid rgba(200, 162, 74, 0.15);
-  border-bottom: 1px solid rgba(200, 162, 74, 0.15);
-  padding: 3.5rem 0;
+  background: var(--emerald-800);
+  border-top: 1px solid rgba(200, 162, 74, 0.12);
+  border-bottom: 1px solid rgba(200, 162, 74, 0.12);
+  padding: 2.2rem 0;
 }
 .compliance-container {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--pad-x);
-  text-align: center;
 }
 .compliance-title {
   display: block;
-  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
   color: var(--gold-soft);
-  font-size: 1.15rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  margin-bottom: 2.2rem;
+  letter-spacing: 0.22em;
+  margin-bottom: 1.4rem;
   text-transform: uppercase;
+  opacity: 0.85;
 }
 .compliance-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
 }
 .compliance-item {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(200, 162, 74, 0.15);
-  border-radius: var(--r-md);
-  padding: 1.8rem 1.2rem;
+  flex: 1;
+  max-width: 240px;
+  padding: 1rem 1.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  border-right: 1px solid rgba(200, 162, 74, 0.12);
+  transition: background 0.3s ease;
+}
+.compliance-item:last-child {
+  border-right: none;
 }
 .compliance-item:hover {
-  border-color: var(--gold-bright);
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-3px);
+  background: rgba(200, 162, 74, 0.05);
 }
 .badge-code {
   color: var(--gold-bright);
-  font-size: 1.05rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.10em;
+  margin-bottom: 0.3rem;
+  white-space: nowrap;
 }
 .badge-desc {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
   margin: 0;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 @media (max-width: 920px) {
   .compliance-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .compliance-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    border-right: none;
+    border-bottom: 1px solid rgba(200, 162, 74, 0.08);
+    padding: 1rem 1.2rem;
+  }
+  .compliance-item:nth-child(odd) {
+    border-right: 1px solid rgba(200, 162, 74, 0.08);
+  }
+  .compliance-item:nth-last-child(-n+2) {
+    border-bottom: none;
   }
 }
 @media (max-width: 500px) {
   .compliance-grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .compliance-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(200, 162, 74, 0.08);
+    padding: 0.8rem 1rem;
+  }
+  .compliance-item:nth-child(odd) {
+    border-right: none;
+  }
+  .compliance-item:last-child {
+    border-bottom: none;
   }
   .compliance-strip {
-    padding: 2.5rem 0;
+    padding: 1.6rem 0;
   }
 }
 
