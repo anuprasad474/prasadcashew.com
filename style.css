@@ -1065,7 +1065,7 @@ body[dir="rtl"] .toast.show { transform: translate(50%, 0); }
   .product-media { min-height: 200px; }
   .product-body { padding: 1.8rem 1.6rem; }
 
-  .workflow { grid-template-columns: 1fr 1fr; gap: 2.2rem 1.2rem; }
+  .workflow { grid-template-columns: 1fr; gap: 2.5rem; }
   .workflow::before { display: none; }
 
   .stats-grid { grid-template-columns: 1fr 1fr; }
