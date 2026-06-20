@@ -376,3 +376,14 @@ window.I18N = {
     compliance_desc_fsms:'जोखिम विश्लेषण प्रमाणित'
   }
 };
+
+/* Language flag indicators for the switcher button */
+window.LANG_FLAGS = {
+  en: 'url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 60 30%27%3E%3CclipPath id=%27t%27%3E%3Cpath d=%27M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z%27/%3E%3C/clipPath%3E%3Cpath d=%27M0,0 v30 h60 V0 z%27 fill=%27%23012169%27/%3E%3Cpath d=%27M0,0 L60,30 M60,0 L0,30%27 stroke=%27%23fff%27 stroke-width=%276%27/%3E%3Cpath d=%27M0,0 L60,30 M60,0 L0,30%27 clip-path=%27url(%23t)%27 stroke=%27%23C8102E%27 stroke-width=%274%27/%3E%3Cpath d=%27M30,0 v30 M0,15 h60%27 stroke=%27%23fff%27 stroke-width=%2710%27/%3E%3Cpath d=%27M30,0 v30 M0,15 h60%27 stroke=%27%23C8102E%27 stroke-width=%276%27/%3E%3C/svg%3E") center/cover',
+  ar: 'linear-gradient(#007A3D 33%,#fff 33%,#fff 66%,#000 66%)',
+  zh: 'linear-gradient(#DE2910,#DE2910)',
+  vi: 'linear-gradient(#DA251D,#DA251D)',
+  fr: 'linear-gradient(90deg,#002395 33%,#fff 33%,#fff 66%,#ED2939 66%)',
+  es: 'linear-gradient(#AA151B 25%,#F1BF00 25%,#F1BF00 75%,#AA151B 75%)',
+  hi: 'linear-gradient(#FF9933 33%,#fff 33%,#fff 66%,#138808 66%)'
+};
