@@ -609,7 +609,7 @@ body[dir="rtl"] .hero-bg::after { background:
 /* =================== WORKFLOW =================== */
 .workflow {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.2rem;
   position: relative;
 }
@@ -994,6 +994,8 @@ body[dir="rtl"] .toast.show { transform: translate(50%, 0); }
   /* brand becomes a full-width band; the four link columns sit evenly below */
   .footer-main { grid-template-columns: repeat(4, 1fr); gap: 2.4rem 2rem; }
   .footer-brand { grid-column: 1 / -1; margin-bottom: 0.4rem; }
+  .workflow { grid-template-columns: repeat(3, 1fr); gap: 2rem 1.2rem; }
+  .workflow::before { display: none; }
 }
 
 /* Tablet — collapse nav into drawer */
