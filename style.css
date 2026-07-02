@@ -3,7 +3,7 @@
    Premium emerald + gold design system
    Mobile-first, fully responsive · redesigned footer
    ===================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+SC:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&family=Noto+Sans+KR:wght@400;600;700&display=swap');
 
 :root {
   --emerald: #064e3b;
@@ -50,6 +50,8 @@ body[dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }
 body[dir="rtl"] .flip { transform: scaleX(-1); }
 body.lang-zh { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
 body.lang-hi { font-family: 'Noto Sans Devanagari', 'Inter', sans-serif; }
+body.lang-ja { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
+body.lang-ko { font-family: 'Noto Sans KR', 'Inter', sans-serif; }
 body.nav-open { overflow: hidden; } /* lock scroll when mobile drawer is open */
 
 h1, h2, h3, .serif {
@@ -61,7 +63,9 @@ h1, h2, h3, .serif {
 }
 body[dir="rtl"] h1, body[dir="rtl"] h2, body[dir="rtl"] h3,
 body.lang-zh h1, body.lang-zh h2, body.lang-zh h3,
-body.lang-hi h1, body.lang-hi h2, body.lang-hi h3 {
+body.lang-hi h1, body.lang-hi h2, body.lang-hi h3,
+body.lang-ja h1, body.lang-ja h2, body.lang-ja h3,
+body.lang-ko h1, body.lang-ko h2, body.lang-ko h3 {
   font-family: inherit;
   font-weight: 700;
 }
