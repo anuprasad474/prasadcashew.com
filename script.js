@@ -30,24 +30,25 @@
     document.body.classList.add('lang-' + code);
 
     // text nodes
+    function t(key) { return d[key] != null ? d[key] : I18N.en[key]; }
     $all('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
-      if (d[key] != null) el.innerHTML = d[key];
+      if (t(key) != null) el.innerHTML = t(key);
     });
     // placeholders
     $all('[data-i18n-ph]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-ph');
-      if (d[key] != null) el.setAttribute('placeholder', d[key]);
+      if (t(key) != null) el.setAttribute('placeholder', t(key));
     });
     // option labels
     $all('[data-i18n-opt]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-opt');
-      if (d[key] != null) el.textContent = d[key];
+      if (t(key) != null) el.textContent = t(key);
     });
     // aria-labels (e.g. social icons)
     $all('[data-i18n-aria]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-aria');
-      if (d[key] != null) el.setAttribute('aria-label', d[key]);
+      if (t(key) != null) el.setAttribute('aria-label', t(key));
     });
 
     // switcher button
