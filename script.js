@@ -157,7 +157,7 @@
     if (scrim) scrim.addEventListener('click', closeMenu);
     // close on Escape and when resizing back to desktop
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
-    window.addEventListener('resize', function () { if (window.innerWidth > 920) closeMenu(); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 1180) closeMenu(); });
 
     // condensed nav on scroll
     if (nav) {
