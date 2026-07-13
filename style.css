@@ -54,6 +54,12 @@ body {
 }
 body[dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }
 body[dir="rtl"] .flip { transform: scaleX(-1); }
+body[dir="rtl"] .topbar a[href^="https://wa.me/"],
+body[dir="rtl"] .footer-connect-col a:is([href^="https://wa.me/"], [href^="mailto:"]),
+body[dir="rtl"] .cm-value {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
 body.lang-zh { font-family: 'Noto Sans SC', 'Inter', sans-serif; }
 body.lang-hi { font-family: 'Noto Sans Devanagari', 'Inter', sans-serif; }
 body.lang-ja { font-family: 'Noto Sans JP', 'Inter', sans-serif; }
@@ -1383,6 +1389,7 @@ body[dir="rtl"] .toast.show { transform: translate(50%, 0); }
   }
   body[dir="rtl"] .nav-links { transform: translateX(-100%); }
   .nav-links.open { transform: translateX(0); }
+  body[dir="rtl"] .nav-links.open { transform: translateX(0); }
 
   .nav-links > a {
     align-items: center;

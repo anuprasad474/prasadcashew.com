@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Market Insights | ALLNUTTS</title>
-  <meta name="description" content="Institutional intelligence — monthly ALLNUTTS analysis of cashew, coffee and pepper crop movements and pricing volatility." />
+  <meta name="description" content="Institutional analysis of crop conditions, commodity supply and price volatility from ALLNUTTS." />
   <meta name="theme-color" content="#022c22" />
-  <link rel="stylesheet" href="style.css?v=20260713.1" />
+  <link rel="stylesheet" href="style.css?v=20260713.2" />
   <link rel="icon" href="logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
-<body>
+<body data-page="reports">
   <div class="topbar">
     <div class="topbar-inner">
       <span data-i18n="top_tag">Institutional Agri-Commodity Sourcing</span>
@@ -26,7 +26,7 @@
     <div class="nav-container">
       <div class="logo-container"><a href="index.html"><img src="logo.png" alt="ALLNUTTS" /></a></div>
       <div class="nav-links" id="navLinks">
-        <div class="mobile-portal-switch" dir="ltr" aria-label="ALLNUTTS destinations">
+        <div class="mobile-portal-switch" dir="ltr" aria-label="ALLNUTTS destinations" data-i18n-aria="aria_destinations">
           <a href="https://www.allnutts.com" target="_blank" rel="noopener" data-i18n="portal_shop">Shop</a>
           <a href="https://www.prasadcashew.com" class="is-active" data-i18n="portal_trading">Trading</a>
         </div>
@@ -36,20 +36,20 @@
         <a href="contact.html" data-i18n="nav_contact">Global Offices</a>
         <a href="index.html#quote" class="btn-gold mobile-only" data-i18n="nav_quote">Get Quote</a>
       </div>
-      <div class="portal-switch" dir="ltr" aria-label="ALLNUTTS destinations">
+      <div class="portal-switch" dir="ltr" aria-label="ALLNUTTS destinations" data-i18n-aria="aria_destinations">
         <a class="portal-option" href="https://www.allnutts.com" target="_blank" rel="noopener" data-i18n="portal_shop">Shop</a>
         <a class="portal-option is-active" href="https://www.prasadcashew.com" data-i18n="portal_trading">Trading</a>
       </div>
       <div class="nav-actions">
         <div class="lang" id="lang">
-          <button class="lang-btn" id="langBtn" aria-label="Select language">
+          <button class="lang-btn" id="langBtn" aria-label="Select language" data-i18n-aria="aria_language">
             <span class="lang-flag" id="langFlag"></span><span id="langLabel">EN</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="lang-menu" id="langMenu" role="menu"></div>
         </div>
         <a href="index.html#quote" class="btn-quote-sm" data-i18n="nav_quote">Get Quote</a>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="navLinks"><span></span><span></span><span></span></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-controls="navLinks" data-i18n-aria="aria_menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
@@ -68,7 +68,7 @@
           <span class="card-number">01</span>
           <div class="card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg></div>
           <h3 data-i18n="rep1_t">Cashew Analysis</h3>
-          <p data-i18n="rep1_p">Bimonthly reports on W320 supply from Ivory Coast and Vietnam.</p>
+          <p data-i18n="rep1_p">Reports issued every two months on W320 supply from Ivory Coast and Vietnam.</p>
           <div class="report-actions">
             <a href="https://www.linkedin.com/company/107169851/posts/" target="_blank" rel="noopener" class="card-link"><span data-i18n="rep_linkedin">Read on LinkedIn</span><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 9.67H5.67V18h2.67V9.67zM7 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM18.33 18v-4.57c0-2.4-1.28-3.52-2.99-3.52-1.38 0-2 .76-2.34 1.29v-1.1h-2.67V18h2.67v-4.4c0-.23.02-.47.09-.64.18-.47.61-.95 1.33-.95.94 0 1.31.71 1.31 1.76V18h2.6z"/></svg></a>
             <a href="https://wa.me/919447745497" target="_blank" rel="noopener" class="card-link card-link-alt"><span data-i18n="rep_request">Request a Copy</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
@@ -78,7 +78,7 @@
           <span class="card-number">02</span>
           <div class="card-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 8z"/><path d="M19 8a3 3 0 0 0 0-6H8M8 2v6"/></svg></div>
           <h3 data-i18n="rep2_t">Coffee Trends</h3>
-          <p data-i18n="rep2_p">Robusta Vietnam origin and supply chain volatility analysis.</p>
+          <p data-i18n="rep2_p">Analysis of Vietnamese Robusta origin and supply-chain volatility.</p>
           <div class="report-actions">
             <a href="https://www.linkedin.com/company/107169851/posts/" target="_blank" rel="noopener" class="card-link"><span data-i18n="rep_linkedin">Read on LinkedIn</span><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 9.67H5.67V18h2.67V9.67zM7 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM18.33 18v-4.57c0-2.4-1.28-3.52-2.99-3.52-1.38 0-2 .76-2.34 1.29v-1.1h-2.67V18h2.67v-4.4c0-.23.02-.47.09-.64.18-.47.61-.95 1.33-.95.94 0 1.31.71 1.31 1.76V18h2.6z"/></svg></a>
             <a href="https://wa.me/919447745497" target="_blank" rel="noopener" class="card-link card-link-alt"><span data-i18n="rep_request">Request a Copy</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
@@ -159,7 +159,7 @@
     <svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2.1-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.8 4.2 1.7.7 2.3.8 3.2.6.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.3A10 10 0 1 0 12 2z"/></svg>
   </a>
   <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg><span>Opening WhatsApp…</span></div>
-  <script src="i18n.js?v=20260713.1"></script>
-  <script src="script.js?v=20260713.1"></script>
+  <script src="i18n.js?v=20260713.2"></script>
+  <script src="script.js?v=20260713.2"></script>
 </body>
 </html>

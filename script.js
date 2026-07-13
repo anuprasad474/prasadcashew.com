@@ -17,6 +17,11 @@
   }
   var current = detectLang();
 
+  function t(key, code) {
+    var d = I18N[code || current] || I18N.en;
+    return d[key] != null ? d[key] : I18N.en[key];
+  }
+
   function applyLang(code) {
     if (!I18N[code]) code = 'en';
     current = code;
@@ -30,7 +35,6 @@
     document.body.classList.add('lang-' + code);
 
     // text nodes
-    function t(key) { return d[key] != null ? d[key] : I18N.en[key]; }
     $all('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       if (t(key) != null) el.innerHTML = t(key);
@@ -50,6 +54,16 @@
       var key = el.getAttribute('data-i18n-aria');
       if (t(key) != null) el.setAttribute('aria-label', t(key));
     });
+
+    // Localize each page's browser title and search/share description.
+    var page = document.body.getAttribute('data-page');
+    if (page) {
+      var title = t('meta_title_' + page);
+      var description = t('meta_desc_' + page);
+      var descriptionMeta = $('meta[name="description"]');
+      if (title != null) document.title = title;
+      if (descriptionMeta && description != null) descriptionMeta.setAttribute('content', description);
+    }
 
     // Keep translated country names readable and isolated in both LTR and RTL.
     $all('.product-origin-tag').forEach(function (el) {
@@ -206,17 +220,16 @@
   }
 
   window.sendWhatsApp = function () {
-    var d = I18N[current];
     var company = (($('#company') || {}).value || '-');
     var product = (($('#product') || {}).value || '-');
     var qty = (($('#qty') || {}).value || '-');
     var details = (($('#details') || {}).value || '-');
-    var msg = '*ALLNUTTS — Quote Request*\n\n' +
-      '*' + d.f_company + ':* ' + company + '\n' +
-      '*' + d.f_product + ':* ' + product + '\n' +
-      '*Volume:* ' + qty + '\n' +
-      '*Spec:* ' + details;
-    toast(d.toast_msg);
+    var msg = '*ALLNUTTS — ' + t('wa_quote_request') + '*\n\n' +
+      '*' + t('f_company') + ':* ' + company + '\n' +
+      '*' + t('f_product') + ':* ' + product + '\n' +
+      '*' + t('wa_volume') + ':* ' + qty + '\n' +
+      '*' + t('wa_spec') + ':* ' + details;
+    toast(t('toast_msg'));
     setTimeout(function () {
       window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg), '_blank');
     }, 450);
