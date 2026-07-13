@@ -33,11 +33,19 @@
     <div class="nav-container">
       <div class="logo-container"><a href="index.html"><img src="logo.png" alt="ALLNUTTS" /></a></div>
       <div class="nav-links" id="navLinks">
+        <div class="mobile-portal-switch" dir="ltr" aria-label="ALLNUTTS destinations">
+          <a href="https://www.allnutts.com" target="_blank" rel="noopener" data-i18n="portal_shop">Shop</a>
+          <a href="https://www.prasadcashew.com" class="is-active" data-i18n="portal_trading">Trading</a>
+        </div>
         <a href="index.html" data-i18n="nav_home">Home</a>
         <a href="about.html" data-i18n="nav_about">Our Story</a>
         <a href="reports.html" data-i18n="nav_reports">Market Insights</a>
         <a href="contact.html" data-i18n="nav_contact">Global Offices</a>
         <a href="#quote" class="btn-gold mobile-only" data-i18n="nav_quote">Get Quote</a>
+      </div>
+      <div class="portal-switch" dir="ltr" aria-label="ALLNUTTS destinations">
+        <a class="portal-option" href="https://www.allnutts.com" target="_blank" rel="noopener" data-i18n="portal_shop">Shop</a>
+        <a class="portal-option is-active" href="https://www.prasadcashew.com" data-i18n="portal_trading">Trading</a>
       </div>
       <div class="nav-actions">
         <div class="lang" id="lang">
@@ -104,6 +112,7 @@
           <span class="badge-desc" data-i18n="compliance_desc_fsms">Hazard Analysis Certified</span>
         </div>
       </div>
+      <p class="compliance-note" data-i18n="compliance_note">Certification availability is confirmed for each proposed processor and lot.</p>
     </div>
   </div>
 
@@ -124,7 +133,7 @@
         <div class="product-body">
           <div class="product-head">
             <h3 data-i18n="prod_cashew">Cashew Kernels (Anacardium occidentale)</h3>
-            <span class="product-origin-tag">Vietnam · India · Africa</span>
+            <span class="product-origin-tag" data-i18n="origin_cashew">Vietnam · India · Africa</span>
           </div>
           <div class="spec-scroll">
             <table class="spec-table">
@@ -187,7 +196,7 @@
         <div class="product-body">
           <div class="product-head">
             <h3 data-i18n="prod_coffee">Robusta Coffee (Coffea Canephora)</h3>
-            <span class="product-origin-tag">Vietnam · Uganda</span>
+            <span class="product-origin-tag" data-i18n="origin_coffee">Vietnam · Uganda</span>
           </div>
           <div class="spec-scroll">
             <table class="spec-table">
@@ -243,7 +252,7 @@
         <div class="product-body">
           <div class="product-head">
             <h3 data-i18n="prod_coconut">Desiccated Coconut (Cocos nucifera)</h3>
-            <span class="product-origin-tag">Vietnam</span>
+            <span class="product-origin-tag" data-i18n="origin_coconut">Vietnam</span>
           </div>
           <div class="spec-scroll">
             <table class="spec-table">
@@ -299,7 +308,7 @@
         <div class="product-body">
           <div class="product-head">
             <h3 data-i18n="prod_pepper">Black Pepper (Piper nigrum)</h3>
-            <span class="product-origin-tag">Vietnam · Brazil</span>
+            <span class="product-origin-tag" data-i18n="origin_pepper">Vietnam · Brazil</span>
           </div>
           <div class="spec-scroll">
             <table class="spec-table">
@@ -365,6 +374,26 @@
         <div class="step reveal"><div class="step-node">5</div><h3 data-i18n="flow5_t">Shipment &amp; Claims Support</h3><p data-i18n="flow5_p">We manage documentation, logistics, shipment follow-up, and support claims coordination when required.</p></div>
         <div class="step reveal"><div class="step-node">6</div><h3 data-i18n="flow6_t">Market Intelligence</h3><p data-i18n="flow6_p">We share regular market updates, price trends, and supply insights to help customers make informed buying decisions.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== ORIGIN INTELLIGENCE ===== -->
+  <section class="origin-intelligence" aria-labelledby="origin-intelligence-title">
+    <div class="origin-intelligence-mark" aria-hidden="true">
+      <span>ALLNUTTS</span>
+      <strong data-i18n="intel_desk">Origin desks</strong>
+    </div>
+    <div class="origin-intelligence-copy reveal">
+      <span class="eyebrow" data-i18n="intel_eyebrow">Origin intelligence</span>
+      <h2 id="origin-intelligence-title" data-i18n="intel_title">A price is useful. Context makes it actionable.</h2>
+      <p data-i18n="intel_text">Our origin desks connect crop conditions, processor capacity, quality movement and logistics signals so buyers can act with a clearer view of the market.</p>
+    </div>
+    <div class="origin-signals reveal">
+      <div><span>01</span><strong data-i18n="intel_signal1">Crop conditions</strong></div>
+      <div><span>02</span><strong data-i18n="intel_signal2">Processor capacity</strong></div>
+      <div><span>03</span><strong data-i18n="intel_signal3">Quality movement</strong></div>
+      <div><span>04</span><strong data-i18n="intel_signal4">Logistics signals</strong></div>
+      <p data-i18n="intel_note">Market context is shared with active buying programmes and tailored to the relevant origin.</p>
     </div>
   </section>
 
