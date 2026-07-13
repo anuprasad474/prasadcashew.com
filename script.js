@@ -51,9 +51,31 @@
       if (t(key) != null) el.setAttribute('aria-label', t(key));
     });
 
+    // Keep translated country names readable and isolated in both LTR and RTL.
+    $all('.product-origin-tag').forEach(function (el) {
+      var parts = (el.textContent || '').split('·').map(function (part) {
+        return part.trim();
+      }).filter(Boolean);
+      el.replaceChildren();
+      parts.forEach(function (part, index) {
+        if (index) {
+          var divider = document.createElement('span');
+          divider.className = 'origin-divider';
+          divider.setAttribute('aria-hidden', 'true');
+          divider.textContent = '•';
+          el.appendChild(divider);
+        }
+        var token = document.createElement('bdi');
+        token.className = 'origin-token';
+        token.textContent = part;
+        el.appendChild(token);
+      });
+      el.setAttribute('aria-label', parts.join(', '));
+    });
+
     // switcher button
     var lbl = $('#langLabel'), flag = $('#langFlag');
-    if (lbl) lbl.textContent = d.native;
+    if (lbl) lbl.textContent = d.label;
     if (flag) flag.style.background = FLAGS[code];
     $all('.lang-option').forEach(function (o) {
       o.classList.toggle('active', o.getAttribute('data-lang') === code);
@@ -74,16 +96,29 @@
       if (!b) return;
       applyLang(b.getAttribute('data-lang'));
       $('#lang').classList.remove('open');
+      $('#langBtn').setAttribute('aria-expanded', 'false');
     });
   }
 
   function initLangToggle() {
     var lang = $('#lang'); if (!lang) return;
-    $('#langBtn').addEventListener('click', function (e) {
+    var button = $('#langBtn');
+    button.setAttribute('aria-expanded', 'false');
+    button.addEventListener('click', function (e) {
       e.stopPropagation();
       lang.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(lang.classList.contains('open')));
     });
-    document.addEventListener('click', function () { lang.classList.remove('open'); });
+    document.addEventListener('click', function () {
+      lang.classList.remove('open');
+      button.setAttribute('aria-expanded', 'false');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        lang.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
   /* ---------- mobile nav (drawer + scrim + scroll lock) ---------- */
@@ -122,7 +157,7 @@
     if (scrim) scrim.addEventListener('click', closeMenu);
     // close on Escape and when resizing back to desktop
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
-    window.addEventListener('resize', function () { if (window.innerWidth > 920) closeMenu(); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 1180) closeMenu(); });
 
     // condensed nav on scroll
     if (nav) {
